@@ -1,0 +1,188 @@
+.input {
+    @apply py-2 px-3 rounded-md appearance-none;
+}
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+.label-field {
+    padding: 5px 9px 4px;
+    border: 1px solid rgba(6, 18, 35, .14);
+    border-radius: 2px;
+    //max-height: 56px;
+    @apply mb-4 bg-white relative cursor-text me-2;
+    &.has-error {
+        border:1px solid rgb(211 41 41);
+        .error {
+            @apply absolute bg-theme-danger text-white;
+            left: 20px;
+            top: -10px;
+            padding: 2px 10px;
+            font-size: 11px;
+            animation-name: shake;
+            animation-duration: .4s;
+            animation-iteration-count: 1;
+        }
+    }
+    &.textarea {
+        max-height: initial;
+    }
+    &.select-field{
+        @apply cursor-pointer;
+    }
+    &.disabled {
+        background: #f9f9fa;
+        color: rgba(53, 63, 77, .23);
+        cursor: not-allowed;
+
+        label {
+            opacity: .57;
+            cursor: not-allowed;
+        }
+
+        .input {
+            background: #f9f9fa;
+            color: rgba(53, 63, 77, .33);
+            cursor: not-allowed;
+        }
+    }
+
+    &.focused {
+        border: 1px solid #007be8 !important;
+
+      >  label {
+            opacity: .67;
+            backface-visibility: hidden;
+            font-size: 12px;
+            letter-spacing: normal;
+        }
+    }
+
+    > label {
+        line-height: 20px;
+        margin: 0;
+        display: block;
+        opacity: 1;
+        cursor: inherit;
+        transition: opacity .2s ease;
+
+        &:not(.error) {
+            color: #353f4d;
+            transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1) 0s, color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+        }
+
+        &.fade {
+            opacity: .5;
+            backface-visibility: hidden;
+            font-size: 12px;
+            letter-spacing: normal;
+        }
+    }
+
+    .input {
+        @apply p-0 h-6  w-full appearance-none;
+        &:not(textarea) {
+            &.input--sm {
+                @apply py-1 px-2;
+            }
+
+            &.input--lg {
+                @apply py-3 px-4;
+            }
+        }
+
+        &:focus {
+            @apply outline-none;
+        }
+
+
+        &[type="radio"] {
+            width: 16px;
+            height: 16px;
+            @apply relative rounded-full overflow-hidden cursor-pointer;
+            &:before {
+                content: "";
+                width: 10px;
+                height: 10px;
+                transition: all 0.2s ease-in-out;
+                @apply absolute rounded-full bg-theme-primary inset-0 m-auto opacity-0;
+            }
+
+            &:checked {
+                @apply border-theme-primary;
+                &:before {
+                    @apply opacity-100;
+                }
+            }
+        }
+
+        &[type="checkbox"]:not(.input--switch) {
+            width: 16px;
+            height: 16px;
+            border-radius: 0.2em;
+            @apply relative overflow-hidden cursor-pointer;
+            &:before {
+                content: "";
+                transition: all 0.2s ease-in-out;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+                background-size: 80%;
+                @apply w-full h-full absolute text-white flex items-center justify-center opacity-0 bg-no-repeat bg-center;
+            }
+
+            &:checked {
+                @apply bg-theme-primary border-theme-primary;
+                &:before {
+                    @apply opacity-100;
+                }
+            }
+        }
+
+        &.input--switch[type="checkbox"] {
+            width: 38px;
+            height: 24px;
+            padding: 1px;
+            @apply outline-none rounded-full relative cursor-pointer;
+            &:before {
+                content: "";
+                width: 22px;
+                height: 22px;
+                transition: all 0.2s ease-in-out;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+                @apply absolute inset-y-0 my-auto rounded-full;
+            }
+
+            &:checked {
+                @apply bg-theme-primary border-theme-primary;
+                &::before {
+                    margin-inline-start: 13px;
+                    @apply bg-white;
+                }
+            }
+        }
+    }
+}
+
+select.input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgb(74, 85, 104)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-size: 15px;
+    border: none;
+    background-position: center right 0.60rem;
+    width: calc(100% + 18px) #{!important};
+    margin: 0 0 0 0;
+    margin-inline-start: -9px;
+    padding: 0 15px #{!important};
+    @apply bg-white bg-no-repeat;
+}

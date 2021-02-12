@@ -1,0 +1,114 @@
+@import 'fonts/shabnam';
+
+[dir="rtl"] .side-menu {
+    &.side-menu--active {
+        &:before {
+            transform: rotate(0) scale(-1, -1)  #{!important};
+            @apply left-0  right-auto #{!important};
+        }
+
+        &:after {
+            transform: scale(-1, 1) #{!important};
+            @apply left-0  right-auto #{!important};
+        }
+
+        .side-menu__icon {
+            &:before {
+                @apply right-auto left-0  #{!important};
+            }
+        }
+    }
+}
+
+[dir="rtl"] .flip-rtl {
+    transform: scale(-1, 1);
+}
+
+
+[dir="rtl"] html, [dir="rtl"] body {
+    text-align: right;
+    @apply font-shabnam #{!important};
+}
+
+
+[dir="rtl"] {
+    .side-menu__title {
+        @apply mr-3 ml-0  #{!important};
+    }
+
+    .side-menu__sub-icon {
+        @apply mr-auto ml-5  #{!important};
+    }
+
+    .search-result {
+        @apply left-0 right-auto  #{!important};
+    }
+}
+
+/*
+table
+*/
+[dir="rtl"] .table {
+    @apply text-right;
+}
+
+[dir="rtl"] .table-report {
+    &:not(.table-report--bordered) {
+        td {
+            box-shadow: -20px 3px 20px #0000000b;
+
+            &:first-child {
+                @apply rounded-r-md;
+                @apply rounded-l-none;
+            }
+
+            &:last-child {
+                @apply rounded-l-md;
+                @apply rounded-r-none;
+            }
+        }
+
+    }
+}
+
+
+[dir="rtl"] .breadcrumb__icon {
+    transform: rotate(180deg);
+}
+
+
+[dir="rtl"] .login {
+    &:before {
+        margin-left: 48%;
+        transform: scaleX(-1);
+    }
+}
+
+[dir="rtl"] {
+
+    .tail-select .select-label .label-count, .tail-select .select-label .label-inner{
+        text-align: right;
+    }
+    .tail-select .select-dropdown ul li{
+        text-align: right;
+        padding: 5px 35px 5px 10px;
+    }
+    .tail-select .select-dropdown ul li.dropdown-option:before{
+        right: 0;
+        left: auto;
+    }
+    .jq-toast-single {
+        @apply font-shabnam #{!important};
+    }
+
+    select.input {
+
+        background-position: center left 0.60rem #{!important};
+    }
+
+    select option {
+        width: 10px;
+    }
+
+
+}

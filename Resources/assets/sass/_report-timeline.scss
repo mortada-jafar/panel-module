@@ -1,0 +1,15 @@
+.report-timeline {
+    &:before {
+        content: "";
+        height: 85%;
+
+        @apply w-px bg-theme-lightblue   absolute ms-8 mt-5;
+    }
+    .report-timeline__image {
+        &:before {
+            content: "";
+            z-index: -1;
+            @apply w-20 h-px bg-theme-lightblue absolute mt-5 ms-5;
+        }
+    }
+}

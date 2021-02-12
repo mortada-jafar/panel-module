@@ -1,0 +1,1 @@
+{{ ($column->func)($data) }}

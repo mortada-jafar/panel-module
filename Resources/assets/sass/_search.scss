@@ -1,0 +1,9 @@
+.search {
+    @apply relative;
+    .search__input {
+        @apply w-56 rounded-full bg-theme-lightblue ps-8;
+    }
+    .search__icon {
+        @apply w-5 h-5 absolute my-auto inset-y-0 ms-3 right-0 text-theme-purple;
+    }
+}

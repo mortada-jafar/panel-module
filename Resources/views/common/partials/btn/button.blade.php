@@ -1,0 +1,1 @@
+<a href="{{$link}}" class="waves-effect waves-light btn {{$class ?? ''}}">{{$text}}</a>

@@ -1,0 +1,17 @@
+{
+    "name": "PanelCore",
+    "alias": "panel_ui",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\PanelCore\\Providers\\UiServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "Helper/helpers.php",
+        "Helper/dynamic_helpers.php",
+        "Helper/jsHelpers.php"
+    ],
+    "requires": []
+}

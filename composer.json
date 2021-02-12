@@ -1,0 +1,27 @@
+{
+    "name": "nwidart/panel",
+    "description": "",
+    "type": "laravel-module",
+    "authors": [
+        {
+            "name": "Mortada Jafar",
+            "email": "jmortadda@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\PanelCore\\": ""
+        }
+    },
+    "require": {
+
+    }
+}

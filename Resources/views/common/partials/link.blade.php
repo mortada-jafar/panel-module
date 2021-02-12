@@ -1,0 +1,1 @@
+<a href="{{ $link }}"><span class="badge {{ $class }}">{{$text}}</span></a>

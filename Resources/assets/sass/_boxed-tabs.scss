@@ -1,0 +1,5 @@
+.boxed-tabs {
+    a.active {
+        @apply bg-theme-primary text-white;
+    }
+}
